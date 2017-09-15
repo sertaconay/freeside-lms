@@ -1,0 +1,7 @@
+body > div:first-of-type,
+body > div:first-of-type > div:first-of-type,
+body > div:first-of-type > div:first-of-type > div,
+body > div:first-of-type > div:first-of-type > div > div,
+body > div:first-of-type > div:first-of-type > div > div > .login-form {
+  height: 100%;
+}
