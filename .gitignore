@@ -62,3 +62,12 @@ static/semantic
 
 # next
 .next
+
+# jetbrains
+.idea
+
+# cloud ide
+.c9
+
+# vscode
+.vscode
