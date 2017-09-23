@@ -9,5 +9,6 @@ module.exports = {
     'max-len': OFF,
     'no-console': OFF,
     'spaced-comment': OFF,
+    'func-names': OFF,
   },
 };
