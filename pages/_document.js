@@ -3,10 +3,10 @@ import Document, { Head, Main, NextScript } from 'next/document';
 import { getLinkOfStylesheet } from '../core/constants';
 
 
-export default class MyDocument extends Document {
+export default class SiteDocument extends Document {
   constructor(...args) {
     super(...args);
-    this.stylesToUse = ['grid', 'container', 'reset', 'site'];
+    this.stylesToUse = ['grid', 'container', 'reset', 'site', 'transition'];
   }
 
   static getInitialProps({ renderPage }) {

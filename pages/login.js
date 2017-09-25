@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Button, Form, Grid, Header, Image, Message, Segment } from 'semantic-ui-react';
 import Head from 'next/head';
+import Link from 'next/link';
 import axios from 'axios';
 import { getLinkOfStylesheet } from '../core/constants';
 
@@ -63,6 +64,8 @@ export default class LoginPage extends Component {
               </Form>
               <Message>
                 New to us? <a href="/">Sign Up</a>
+                <br />
+                <Link href="/"><Button as="a">Home</Button></Link>
               </Message>
             </Grid.Column>
           </Grid>
