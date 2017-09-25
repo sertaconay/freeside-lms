@@ -5,7 +5,7 @@ const bluebird = require('bluebird');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const passport = require('passport');
-const morgan = require('morgan');
+// const morgan = require('morgan');
 const expressValidator = require('express-validator');
 const authController = require('./controllers/authController');
 const userController = require('./controllers/userController');
@@ -40,7 +40,7 @@ app
     server.use(bodyParser.json());
     server.use(bodyParser.urlencoded({ extended: true }));
 
-    server.use(morgan('dev'));
+    // server.use(morgan('dev'));
 
     server.use(expressValidator());
 
@@ -56,13 +56,11 @@ app
 
     server.get('/dashboard', passport.authenticate('jwt', { session: false }));
 
-    server.get('*', (req, res) => {
-      return handle(req, res);
-    });
+    server.get('*', (req, res) => handle(req, res));
 
-    server.listen(process.env.PORT, (err) => {
+    server.listen(process.env.PORT, process.env.IP, (err) => {
       if (err) throw err;
-      console.log(`express running on http://localhost:${process.env.PORT}`);
+      console.log(`express running on http://${process.env.IP}:${process.env.PORT}`);
     });
   })
   .catch((ex) => {
