@@ -3,6 +3,7 @@ const OFF = 0,
       ERROR = 2;
 
 module.exports = {
+  'parser': 'babel-eslint',
   'extends': 'airbnb',
   'rules': {
     'react/jsx-filename-extension': OFF,
