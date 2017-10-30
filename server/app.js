@@ -46,15 +46,19 @@ app
 
     server.use(passport.initialize());
 
-    server.post('/login',
+    server.post(
+      '/login',
       authController.authenticate,
     );
 
-    server.post('/register',
+    server.post(
+      '/register',
       userController.register,
     );
 
-    server.get('/dashboard', passport.authenticate('jwt', { session: false }));
+    // server.get('/dashboard', passport.authenticate('jwt', { session: false }));
+
+    server.get('/dashboard', authController.checkAuthorization);
 
     server.get('*', (req, res) => handle(req, res));
 
