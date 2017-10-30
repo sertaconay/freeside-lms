@@ -1,10 +1,13 @@
+/* eslint-disable */
+
 import React, { Component } from 'react';
-import { Button, Form, Grid, Header, Image, Message, Segment } from 'semantic-ui-react';
+import { Button, Form, Grid, Header, Image, Message, Segment, Container } from 'semantic-ui-react';
 import Head from 'next/head';
 import Link from 'next/link';
 import axios from 'axios';
-import { getLinkOfStylesheet } from '../core/constants';
+import { getLinkOfStylesheet } from '../../core/constants';
 
+// import MainLayout from '../../components/layout/Main';
 
 const stylesToUse = ['modal', 'button', 'image', 'header', 'transition', 'dimmer', 'form', 'message', 'segment', 'icon', 'input'];
 
@@ -29,47 +32,39 @@ export default class LoginPage extends Component {
           {stylesToUse.map(fileName => (
             <link key={fileName} rel="stylesheet" href={getLinkOfStylesheet(fileName)} />
           ))}
-          <link rel="stylesheet" href="/static/css/style.css" />
         </Head>
-        <div className="login-form">
-          <Grid
-            textAlign="center"
-            style={{ height: '100%' }}
-            verticalAlign="middle"
-          >
-            <Grid.Column style={{ maxWidth: 450 }}>
-              <Header as="h2" color="teal" textAlign="center">
-                <Image src="/static/images/logo.png" />
-                {' '}Log-in to your account
-              </Header>
-              <Form size="large" onSubmit={this.handleSubmit}>
-                <Segment stacked>
-                  <Form.Input
-                    fluid
-                    icon="user"
-                    iconPosition="left"
-                    name="email"
-                    placeholder="E-mail address"
-                  />
-                  <Form.Input
-                    fluid
-                    icon="lock"
-                    iconPosition="left"
-                    name="password"
-                    placeholder="Password"
-                    type="password"
-                  />
-                  <Button color="teal" fluid size="large">Login</Button>
-                </Segment>
-              </Form>
-              <Message>
-                New to us? <a href="/">Sign Up</a>
-                <br />
-                <Link href="/"><Button as="a">Home</Button></Link>
-              </Message>
-            </Grid.Column>
+        <Container fluid>
+          <Grid centered columns={1}>
+            <Grid.Row verticalAlign="middle">
+              <Grid.Column mobile={16} tablet={8} computer={4}>
+                <Form size="large">
+                  <Segment stacked>
+                    <Form.Input
+                      fluid
+                      icon="user"
+                      iconPosition="left"
+                      name="email"
+                      placeholder="E-mail Address"
+                      type="text"
+                    />
+                    <Form.Input
+                      fluid
+                      icon="lock"
+                      iconPosition="left"
+                      name="password"
+                      placeholder="Password"
+                      type="password"
+                    />
+                    <Button color="teal" fluid size="large">Login</Button>
+                  </Segment>
+                </Form>
+                <Message>
+                  New to us? <Link href="/user/register"><a>Sign Up</a></Link>
+                </Message>
+              </Grid.Column>
+            </Grid.Row>
           </Grid>
-        </div>
+        </Container>
       </div>
     );
   }
