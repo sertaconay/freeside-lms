@@ -1,7 +1,17 @@
-body > div:first-of-type,
-body > div:first-of-type > div:first-of-type,
-body > div:first-of-type > div:first-of-type > div,
-body > div:first-of-type > div:first-of-type > div > div,
-body > div:first-of-type > div:first-of-type > div > div > .login-form {
+/*body > div:first-of-type,*/
+/*body > div:first-of-type > div:first-of-type,*/
+/*body > div:first-of-type > div:first-of-type > div,*/
+/*body > div:first-of-type > div:first-of-type > div > div,*/
+/*body > div:first-of-type > div:first-of-type > div > div > .login-form {*/
+  /*height: 100%;*/
+/*}*/
+
+#__next,
+.site-container,
+.container,
+.grid,
+.row,
+[data-reactroot],
+[data-reactroot] > div:first-of-type {
   height: 100%;
 }

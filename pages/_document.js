@@ -27,10 +27,10 @@ export default class SiteDocument extends Document {
           {this.stylesToUse.map(fileName => (
             <link key={fileName} rel="stylesheet" href={getLinkOfStylesheet(fileName)} />
           ))}
+          <link rel="stylesheet" href="/static/css/style.css" />
         </Head>
         <body>
-          <span className="sa" />
-          <Main />
+          <Main className="site-container" />
           <NextScript />
         </body>
       </html>

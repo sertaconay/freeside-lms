@@ -18,7 +18,7 @@ const FixedMenu = () => (
       <Menu.Item as="a">Careers</Menu.Item>
       <Menu.Menu position="right">
         <Menu.Item className="item">
-          <Link href="/login"><Button as="a">Log in</Button></Link>
+          <Link href="/user/login"><Button as="a">Log in</Button></Link>
         </Menu.Item>
         <Menu.Item>
           <Button as="a" primary>Sign Up</Button>
@@ -28,7 +28,9 @@ const FixedMenu = () => (
   </Menu>
 );
 
-const SiteMenu = ({ visible, showFixedMenu, hideFixedMenu, addCount }) => (
+const SiteMenu = ({
+  visible, showFixedMenu, hideFixedMenu, addCount,
+}) => (
   <div>
     <Head>
       {stylesToUse.map(fileName => (
@@ -56,7 +58,7 @@ const SiteMenu = ({ visible, showFixedMenu, hideFixedMenu, addCount }) => (
             <Menu.Item as="a">Company</Menu.Item>
             <Menu.Item as="a">Careers</Menu.Item>
             <Menu.Item position="right">
-              <Link href="/login"><Button as="a">Log in</Button></Link>
+              <Link href="/user/login"><Button as="a">Log in</Button></Link>
               <Button as="a" inverted style={{ marginLeft: '0.5em' }}>Sign Up</Button>
             </Menu.Item>
           </Menu>
@@ -67,7 +69,9 @@ const SiteMenu = ({ visible, showFixedMenu, hideFixedMenu, addCount }) => (
             as="h1"
             content="Imagine-a-Company"
             inverted
-            style={{ fontSize: '4em', fontWeight: 'normal', marginBottom: 0, marginTop: '3em' }}
+            style={{
+              fontSize: '4em', fontWeight: 'normal', marginBottom: 0, marginTop: '3em',
+            }}
           />
           <Header
             as="h2"
